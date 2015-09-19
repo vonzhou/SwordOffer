@@ -2,16 +2,15 @@ package main;
 
 public class FirstCommonNodeInLists {
 	/*
-	 * 1.Brute 每遍历L1的一个节点 就遍历L2看是否经过这个节点  O(mn)
+	 * 1.Brute force, every node in L1, we see if it appears in L2, O(mn)
 	 */
 	
 	/*
-	 * 2. 利用两个辅助栈 然后从链表尾部开始弹出 最后一个相同的节点就是
-	 * O(m+n) , 空间复杂度O(m+n)
+	 * 2. use two stacks , and then pop from the List tail , O(m+n),  O(m+n)
 	 */
 	
 	/*
-	 * 3. 先得到两个链表长度之差k，然后让长者先走k步  然后同时遍历L1 L2 ，O(m+n)
+	 * 3. go first in the longer List, and then move together....
 	 */
 	public ListNode firstCommon(ListNode head1, ListNode head2){
 		if(head1 == null || head2== null)

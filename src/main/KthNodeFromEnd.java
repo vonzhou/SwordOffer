@@ -2,12 +2,32 @@ package main;
 
 public class KthNodeFromEnd {
 	
-	// 很自然会想到 先求出链表长度 然后正向遍历
+	//1. traverse twice, pupu....
 	public static ListNode findKthFromTailBrute(ListNode list, int k){
-		return null;
+		if(list == null || k == 0)
+			return null;
+		
+		int n = 0;
+		ListNode p = list;
+		while(p != null){
+			n ++;
+			p = p.next;
+		}
+		
+		int step = n - k;
+		if(step < 0)
+			return null;
+		
+		p = list;
+		while(step > 0){
+			p = p.next;
+			step -- ;
+		}
+		
+		return p;
 	}
 	
-	// 
+	// 2. use two pointers 
 	public static ListNode findKthFromTail(ListNode list, int k){
 		if(list == null || k == 0)
 			return null;

@@ -52,7 +52,3 @@ public class StringFilter {
 	}
 
 }
-
-/*
- * Java 总是 pass-by-value 的  所以上面根本不会
- * */
